@@ -162,14 +162,28 @@
 
   <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-    <header><a href="/home.html">OPEN MEETING</a> </header>
+    <header><a href="/home.php">OPEN MEETING</a> </header>
 
   <div class="nav">
 
     <ul class="menu" >
-      <li><a href="/home.html">Home</a></li>
+      <li><a href="/home.php">Home</a></li>
       <li><a href="/event.php">Start</a></li>
       <li><a href="/create.php">Create</a></li>
+            <!--로그인 -->
+
+
+      <?php
+
+      if(isset($_SESSION['userid'])){
+      echo"<li><a href=\"/member/MyAccount_info.php\">My Account</a></li>";
+      echo"<li><a href=\"/member/logout.php\">logout</a></li>";
+     }else{
+
+      echo"<li><a href=\"/login.php\">login</a></li>";
+     }
+      ?>
+      <!--로그인 -->
 
     </ul>
 
@@ -189,7 +203,7 @@
           <li><a href="방번호순.php?category=<?='종교'?>"> 종교</a></li>
           <li><a href="방번호순.php?category=<?='동창/동문'?>"> 동창/동문</a></li>
           <li><a href="방번호순.php?category=<?='연예인'?>"> 연예인</a></li>
-          <li><a href="방번호순.php?category=<?='방송/연예>'?>"> 방송/연예</a></li>
+          <li><a href="방번호순.php?category=<?='방송/연예'?>"> 방송/연예</a></li>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
