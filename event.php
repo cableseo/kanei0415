@@ -226,9 +226,9 @@
             <a href="https://forms.gle/h2rm23niqXGhEGLA6"><button>신청링크</button></a>
           </div>
     </div>
-    <--<div style="text-align:center;">
+    <div style="text-align:center;">
       <img src="event.png" alt="" loading="lazy" style="width:40%;">
-    </div>-->
+    </div>
   </div>
 
 </body>
