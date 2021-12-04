@@ -41,7 +41,7 @@
 					</tr>
 					<tr>
 						<td>취미</td>
-						<td><input type="text" size="35" name="adress" placeholder="취미" required></td>
+						<td><input type="text" size="35" name="hobby" placeholder="취미" required></td>
 					</tr>
 					<tr>
 						<td>성별</td>
