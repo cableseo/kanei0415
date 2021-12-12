@@ -64,7 +64,7 @@
             echo'<li><a class="nav-link nav-item" href=/member/logout.php>logout</a></li>';
            }else{
 
-            echo'<li><a class="nav-link nav-item" href=/login0.php>login</a></li>';
+            echo'<li><a class="nav-link nav-item" href=/login.php>login</a></li>';
            }
               ?>
             </ul>
@@ -159,7 +159,13 @@
                   <span>미라클 모닝</span>
                 </h6>
                 <a href="#mrcl_event_info">
-                  Enter
+                  이벤트
+                </a>
+                <a href="https://meet.jit.si/studyroom1">
+                  1번방
+                </a>
+                <a href="https://meet.jit.si/studyroom2">
+                  2번방
                 </a>
               </div>
             </div>
@@ -201,7 +207,7 @@
       </form>
 
       <ul class="filters_menu">
-        <li class="active" data-filter="*">Search</li>
+        <li class="active" data-filter="*">All</li>
         <li data-filter=".cat1">생활/취미</li>
         <li data-filter=".cat2">온라인 게임</li>
         <li data-filter=".cat3">스포츠/레저</li>
@@ -220,14 +226,12 @@
         <div class="row grid">
 
 
-
+          <div class="cat1">
           <?php
           // room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
-            if(is_null($search_con)){
-              $sql = query("select * from room2");
-            }else{
-              $sql = query("select * from room2 where title like '%$search_con%'");
-            }
+
+            $sql = query("select * from room2 where category = '생활/취미'");
+
               while($room = $sql->fetch_array())
               {
                 //title변수에 DB에서 가져온 title을 선택
@@ -248,7 +252,7 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    <a href="https://jitsimain-sw1.com/"><?=$title;?></a>
+                    <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
                   </h5>
                   <p>
                     <?=$content;?>
@@ -260,6 +264,340 @@
         <?php } ?>
       </div>
 
+
+      <div class="cat2">
+      <?php
+      // room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+        $sql = query("select * from room2 where category = '온라인 게임'");
+
+          while($room = $sql->fetch_array())
+          {
+            //title변수에 DB에서 가져온 title을 선택
+            $title=$room["title"];
+            $content=$room["content"];
+            $imgpath=$room["imgpath"];
+            $category=$room["category"];
+
+
+      ?>
+      <div class="col-sm-6 col-lg-4 all cat2">
+
+        <div class="box">
+          <div>
+
+            <div class="img-box">
+              <img src="<?=$imgpath;?>" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+              </h5>
+              <p>
+                <?=$content;?>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php } ?>
+  </div>
+  <div class="cat3">
+  <?php
+  // room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+    $sql = query("select * from room2 where category = '스포츠/레저'");
+
+      while($room = $sql->fetch_array())
+      {
+        //title변수에 DB에서 가져온 title을 선택
+        $title=$room["title"];
+        $content=$room["content"];
+        $imgpath=$room["imgpath"];
+        $category=$room["category"];
+
+
+  ?>
+  <div class="col-sm-6 col-lg-4 all cat3">
+
+    <div class="box">
+      <div>
+
+        <div class="img-box">
+          <img src="<?=$imgpath;?>" alt="">
+        </div>
+        <div class="detail-box">
+          <h5>
+            <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+          </h5>
+          <p>
+            <?=$content;?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php } ?>
+</div>
+<div class="cat4">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '외국어'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat4">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat5">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '음악'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat5">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat6">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '친목/모임'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat6">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat7">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '패션/미용'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat7">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat8">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '교육'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat8">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat9">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '스터디'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat9">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
+<div class="cat11">
+<?php
+// room테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
+
+  $sql = query("select * from room2 where category = '연예인'");
+
+    while($room = $sql->fetch_array())
+    {
+      //title변수에 DB에서 가져온 title을 선택
+      $title=$room["title"];
+      $content=$room["content"];
+      $imgpath=$room["imgpath"];
+      $category=$room["category"];
+
+
+?>
+<div class="col-sm-6 col-lg-4 all cat11">
+
+  <div class="box">
+    <div>
+
+      <div class="img-box">
+        <img src="<?=$imgpath;?>" alt="">
+      </div>
+      <div class="detail-box">
+        <h5>
+          <a href="https://jitsimain-sw1.com/<?=$title;?>"><?=$title;?></a>
+        </h5>
+        <p>
+          <?=$content;?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+</div>
 
 
 
@@ -300,7 +638,7 @@
             혹시 요새 유행 중인 '미라클 모닝'이라고 들어보셨나요?<br>
 이른 아침 일어나 자기계발을 하는 것인데요.🌞<br>
 이번 이벤트를 통해 아침 시간을 활용하여 학우들과 함께 <br>공부해 보는 건 어떨까요?✍️✍️✍️<br>
-이벤트 기간인 🌟12월 3일(금)~5일(일)🌟까지 총 3일 모두 <br>참여해 주시는 분 중 우수 참여자분들을 선정하여
+이벤트 기간인 🌟12월 10일(금)~12일(일)🌟까지 총 3일 모두 <br>참여해 주시는 분 중 우수 참여자분들을 선정하여
 🎁상품🎁도 <br>제공할 예정이니, 많은 참여 부탁드립니다!
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScpodR6EN488MQXopZu90dIY74-h8nPtVZTkzrsEDdFLdBgWg/viewform">

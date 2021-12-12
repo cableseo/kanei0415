@@ -31,7 +31,7 @@
 <meta charset="utf-8" />
 <script type="text/javascript">alert('회원가입이 완료되었습니다.');</script>
 
-<meta http-equiv="refresh" content="0 url=/start2.php">
+<meta http-equiv="refresh" content="0 url=/index.php">
 <?php
 	}else{
 		echo "<script>alert('중복된 아이디입니다.'); history.back();</script>";
